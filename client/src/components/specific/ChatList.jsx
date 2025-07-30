@@ -15,7 +15,7 @@ const ChatList = ({
     ],
     handleDeleteChat
 }) => {
-    
+
     return <Stack width={w} direction={"column"}>
         {
             chats?.map((data,index)=>{
