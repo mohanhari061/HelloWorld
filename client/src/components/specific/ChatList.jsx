@@ -14,11 +14,16 @@ const ChatList = ({
     ],
     handleDeleteChat
 }) => {
-    
+
     return <Stack width={w} direction={"column"}>
         {
-            chats?.map(data=>{
-                return <div>{data}</div>
+            chats?.map((data, index) => {
+                const {avatar, _id, name, groupChat,members } = data;
+
+                // const newMessageAlert = newMessageAlert.find(({chatId}) => chatId === _id);
+                // const isOnline =members?.some(member => onlineUsers.includes(member._id));
+
+                return <ChatItem newMessageAlert={newMessageAlert}/>;
             })
         }
     </Stack>;
