@@ -10,4 +10,4 @@ const Chat = () => {
 }
 
 
-export default Chat;
+export default AppLayout()(Chat);

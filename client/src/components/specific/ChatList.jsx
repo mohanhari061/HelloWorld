@@ -1,32 +1,49 @@
-import { Stack } from '@mui/material';
-import React from 'react'
-import ChatItem from '../shared/ChatItem';
+import { Stack } from "@mui/material";
+import React from "react";
+import ChatItem from "../shared/ChatItem";
 
 const ChatList = ({
     w = "100%",
     chats = [],
-    chatid,
+    chatId,
     onlineUsers = [],
-    newMessageAlert = [
+    newMessagesAlert = [
         {
             chatId: "",
             count: 0,
         },
     ],
-    handleDeleteChat
+    handleDeleteChat,
 }) => {
-
-    return <Stack width={w} direction={"column"}>
-        {
-            chats?.map((data,index)=>{
+    return (
+        <Stack width={w} direction={"column"}>
+            {chats?.map((data, index) => {
                 const { avatar, name, _id, groupChat, members } = data;
-                const newMessageAlert = newMessageAlert.find(({chatId} )=> chatId === _id);
-                const isOnline = onlineUsers.some((user) => members.includes(user._id));
-                const sameSender = index > 0 && chats[index - 1]._id === _
-                return <ChatItem newMessageAlert={newMessageAlert} />
-            })
-        }
-    </Stack>;
+                const newMessageAlert = newMessagesAlert.find(
+                    ({ chatId }) => chatId === _id
+                );
+                const isOnline = members.some((user) =>
+                    onlineUsers.includes(user._id)
+                );
+                // {console.log(isOnline)}
+                // const sameSender = index > 0 && chats[index - 1]._id === _
+                return (
+                    <ChatItem
+                        index={index}
+                        newMessageAlert={newMessageAlert}
+                        isOnline={isOnline}
+                        avatar={avatar}
+                        name={name}
+                        _id={_id}
+                        key={_id}
+                        groupChat={groupChat}
+                        sameSender={chatId === _id}
+                        handleDeleteChat={handleDeleteChat}
+                    />
+                );
+            })}
+        </Stack>
+    );
 };
 
-export default ChatList
+export default ChatList;
