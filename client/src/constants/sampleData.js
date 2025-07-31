@@ -48,3 +48,36 @@ export const sampleNotifications = [
         _id: "2",
     },
 ];
+
+export const sampleMessage = [
+    {
+        attachments: [
+            {
+                public_id: "asdfghjk",
+                url: "https://www.w3schools.com/howto/img_avatar.png",
+            },
+        ],
+        content: "hari ka message hai",
+        sender: {
+            _id: "qwertyuiop",
+            name: "Chaman",
+        },
+        chat: "chatId",
+        createdAt: "2025-07-12T10:41:30.630Z",
+    },
+    {
+        attachments: [
+            {
+                public_id: "asdfghjk2",
+                url: "https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg",
+            },
+        ],
+        content: "hari2 ka message hai",
+        sender: {
+            _id: "dDASFaFcadgfSDASG",
+            name: "Tamnaaaaaa",
+        },
+        chat: "chatId2",
+        createdAt: "2025-07-31T10:41:30.630Z",
+    },
+];

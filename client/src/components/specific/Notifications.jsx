@@ -12,6 +12,7 @@ import {
 import { Add as AddIcon } from "@mui/icons-material";
 import React, { memo } from "react";
 import { sampleNotifications } from "../../constants/sampleData";
+import { transformImage } from "../../lib/features";
 
 const Notifications = () => {
 
@@ -53,7 +54,7 @@ const NotificationItem = memo(({ sender, _id, handler }) => {
                 width={"100%"}
             >
                 <Avatar
-                    src="https://mui.com/static/images/avatar/1.jpg"
+                    src={transformImage("https://mui.com/static/images/avatar/1.jpg")}
                     alt={name}
                 />
 
