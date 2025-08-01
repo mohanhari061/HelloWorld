@@ -34,7 +34,7 @@ const Login = () => {
 
     return (
        <div style={{
-        backgroundImage:"linear-gradient(rgba(200,200,200,0.5),rgba(120,110,220,0.5))"
+        backgroundImage:"linear-gradient(rgb(255 225 209),rgb(249 159 159))"
        }}>
          <Container
             component={"main"}

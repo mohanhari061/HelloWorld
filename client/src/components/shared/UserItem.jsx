@@ -3,7 +3,7 @@ import { Add as AddIcon, Remove as RemoveIcon } from "@mui/icons-material";
 import React, { memo } from "react";
 import { transformImage } from "../../lib/features";
 
-const UserItem = ({ user, handler, handlerIsloading, isAdded = false }) => {
+const UserItem = ({ user, handler, handlerIsloading, isAdded = false, styling={}}) => {
     const { name, _id, avatar } = user;
 
     return (
@@ -13,6 +13,7 @@ const UserItem = ({ user, handler, handlerIsloading, isAdded = false }) => {
                 alignItems={"center"}
                 spacing={"1rem"}
                 width={"100%"}
+                {...styling}
             >
                 <Avatar
                     src={transformImage("https://mui.com/static/images/avatar/1.jpg")}
