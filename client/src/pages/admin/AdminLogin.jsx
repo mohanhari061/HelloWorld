@@ -11,17 +11,21 @@ import {
 } from "@mui/material";
 import { usernameValidator } from "../../utils/validators.js";
 import { Navigate } from "react-router-dom";
+import { useInputValidation } from "6pp";
 
 const isAdmin=false;
 
+
+
 const AdminLogin = () => {
 
+    if(isAdmin)return <Navigate to={'/admin/dashboard'}/>
     const secretKey = useInputValidation("");
 
     const submitHandler = (e) => {
         e.preventDefault();
         console.log("submit")
-    };
+    };  
 
     if(isAdmin)return <Navigate to="/admin/dashboard"></Navigate>
     

@@ -1,6 +1,6 @@
 import { styled } from "@mui/material";
 import { Link as LinkComponent } from "react-router-dom";
-import { grayColor } from "../../constants/color";
+import { grayColor, matBlack } from "../../constants/color";
 
 export const VisuallyHiddenInput = styled("input")({
     border: 0,
@@ -32,3 +32,30 @@ export const InputBox = styled("input")`
     border-radius: 1.5rem;
     background-color: ${grayColor};
 `;
+
+
+export const SearchField=styled("input")`
+    padding: 1rem 2rem;
+    width: 20vmax;
+    border:none;
+    outline:none;
+    border-radius:1.5rem;
+    background-color: ${grayColor};
+    front-size:1.1rem;
+
+`
+
+export const CurveButton=styled("button")`
+    border-radius:1.5rem;
+    padding: 1rem 2rem;
+    border:none;
+    outline:none;
+    cursor:pointer;
+    background-color: ${matBlack};
+    front-size:1.1rem;
+    color:white;
+    &:hover{
+        background-color:rgba(0,0,0,0.7)
+    };
+
+`
