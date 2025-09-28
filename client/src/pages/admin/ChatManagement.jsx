@@ -75,7 +75,7 @@ const ChatManagement = () => {
                 avatar:i.avatar.map(i=>(transformImage(i,50))),           
                 members:i.members.map(i=>(transformImage(i.avatar,50))),
                 creator:{
-                    name:creator.name,
+                    name:i.creator.name,
                     avatar:transformImage(i.creator.avatar,50)
                 }
             }
